@@ -8,20 +8,41 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="index.css?1.0" media="all">
+    <link rel="stylesheet" href="index.css" media="all">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+    <script>
+      let random = Math.floor(Math.random() * 1000)
+      let css = document.querySelector('link[href="index.css"]');
+      css.href = 'index.css?v='+random;
+    </script>
 </head>
 
 <body>
 
   <main>
 
-    <div class="fondo d-flex flex-column justify-content-center align-items-center">
+    <section class="seccion d-flex flex-column justify-content-center align-items-center" id="reservar">
         <h1 class="w-25 d-flex justify-content-center" style="user-select: none"><span style="font-family: Tilt Prism; color: aliceblue; font-weight: 500; font-size: 100px;">LINQ</span></h1>
         <button class="btn btn-outline-warning text-dark-50" id="boton" onclick="agregarAnimacion()">Reservar</button>
-    </div>
+    </section>
+
+    <section class="seccion d-flex flex-column justify-content-center align-items-center" id="sobreNosotros">
+      <p>sobre nosotros</p>
+    </section>
+
+    <section class="seccion d-flex flex-column justify-content-center align-items-center" id="menu">
+      <p>menu</p>
+    </section>
+
+    <section class="seccion d-flex flex-column justify-content-center align-items-center" id="reseñas">
+      <p>reseñas</p>
+    </section>
+
+    <section class="seccion d-flex flex-column justify-content-center align-items-center" id="contacto">
+      <p>contacto</p>
+    </section>
 
   </main>
 
@@ -37,7 +58,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
-  <script src="index.js"></script>
+  <script src="index.js?version="+random></script>
 </body>
 
 </html>

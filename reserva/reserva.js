@@ -105,7 +105,7 @@ function envioCompleto(){
 	boton.classList.add('enviado');
 	boton.innerHTML = '';
 	document.getElementById('submit').disabled = true;
-	
+	setTimeout(redirigirAInicio,2000);
 }
 
 function redirigirAInicio(){

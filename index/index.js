@@ -10,3 +10,6 @@ function agregarAnimacion(){
 function redirigirA(pagina){
     window.location.href = pagina;
 }
+
+//Scroll smooth entre secciones (Arreglar)
+
