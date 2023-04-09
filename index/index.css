@@ -12,9 +12,9 @@ section{
 }
 
 #reservar{
-  background: url(images/comida1.jpg) no-repeat center center;
+  background: url(images/hero.jpg) no-repeat center center;
   background-size: cover;
-  filter: brightness(.6);
+  filter: brightness(.7);
 }
 
 h1, button{

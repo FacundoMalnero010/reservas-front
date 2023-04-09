@@ -4,7 +4,7 @@ html,body,#contenedor{
 }
 
 #contenedor{
-    background: url(images/fondo.jpg) no-repeat center center;
+    background: url(images/comida1.jpg) no-repeat center center;
     background-size: cover;
     filter: brightness(0.6);
 }
