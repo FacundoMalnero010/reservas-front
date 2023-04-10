@@ -21,6 +21,26 @@
 
 <body>
 
+  <header>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#reservar">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#sobreNosotros">Acerca de</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#menu">Menu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#reseñas">Reseñas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contacto">Contacto</a>
+      </li>
+    </ul>
+  </header>
+
   <main>
 
     <section class="seccion d-flex flex-column justify-content-center align-items-center" id="reservar">
@@ -28,8 +48,56 @@
         <button class="btn btn-outline-warning text-dark-50" id="boton" onclick="agregarAnimacion()">Reservar</button>
     </section>
 
-    <section class="seccion d-flex flex-column justify-content-center align-items-center" id="sobreNosotros">
-      <p>sobre nosotros</p>
+    <section class="seccion d-flex align-items-center flex-wrap" id="sobreNosotros">
+      <div class="card col-3 offset-2 h-25">
+        <img src="images/historia.jpg" loading="lazy" alt="historia" class="card-img-top rounded h-100" style="filter: brightness(0.6)">
+        <div class="card-img-overlay">
+          <h2 class="card-title text-light">Historia</h2>
+          <h5 class="card-text invisible">
+            Linq tiene una rica historia que se remonta a más de 50 años. Fundado por la familia Malnero en el corazón de 
+            la ciudad, pronto se convirtió en el destino gastronómico más popular para aquellos que buscaban una experiencia de lujo. 
+            Con el tiempo, el restaurante se ha expandido y renovado para mantenerse al día con las últimas tendencias culinarias y de 
+            diseño, pero siempre ha mantenido su compromiso con la calidad, la creatividad y la excelencia
+          </h5>
+        </div>
+      </div>
+      <div class="card col-3 offset-2 h-25">
+        <img src="images/vision.jpg" loading="lazy" alt="vision" class="card-img-top rounded h-100" style="filter: brightness(0.6)">
+        <div class="card-img-overlay">
+          <h2 class="card-title text-light">Vision</h2>
+          <h5 class="card-text invisible">
+            Linq se enfoca en brindar una experiencia gastronómica excepcional a sus comensales. Desde el momento en que los clientes cruzan 
+            la puerta, el ambiente sofisticado y acogedor los envuelve, creando una sensación de exclusividad y lujo. Los detalles en la 
+            decoración, el mobiliario y la iluminación son cuidadosamente seleccionados para crear una atmósfera elegante y refinada. 
+            La música suave y el servicio impecable complementan la experiencia y hacen que los clientes se sientan especiales
+          </h5>
+        </div>
+      </div>
+      <div class="card col-3 offset-2 h-25">
+        <img src="images/personal.png" loading="lazy" alt="personal" class="card-img-top rounded h-100" style="filter: brightness(0.6)">
+        <div class="card-img-overlay">
+          <h2 class="card-title text-light">Personal</h2>
+          <h5 class="card-text invisible">
+            Desde los meseros hasta el equipo de cocina y el personal de limpieza, cada uno cumple un rol clave en el éxito de Linq. 
+            La selección cuidadosa del personal es esencial para asegurar que cada uno tenga la formación y habilidades 
+            necesarias para brindar un servicio excepcional. Los meseros son expertos en la carta y el maridaje de vinos, tienen una 
+            actitud amable, profesional y son capaces de anticipar las necesidades de los clientes. En la cocina, los chefs y sus 
+            asistentes son creativos, talentosos y cuentan con un alto nivel de conocimiento culinario. La limpieza y mantenimiento del 
+            establecimiento también son talentosos como para mantener la calidad y la elegancia del ambiente
+          </h5>
+        </div>
+      </div>
+      <div class="card col-3 offset-2 h-25">
+        <img src="images/experiencia.png" loading="lazy" alt="experiencia" class="card-img-top rounded h-100" style="filter: brightness(0.6)">
+        <div class="card-img-overlay">
+          <h2 class="card-title text-light">Experiencia</h2>
+          <h5 class="card-text invisible">
+            La experiencia que brinda Linq es verdaderamente única e inolvidable. Desde el ambiente 
+            sofisticado hasta el servicio impecable y la deliciosa comida y vinos, cada detalle está diseñado para hacer que los clientes 
+            se sientan especiales y disfruten de una experiencia gastronómica inolvidable
+          </h5>
+        </div>
+      </div>
     </section>
 
     <section class="seccion d-flex flex-column justify-content-center align-items-center" id="menu">
