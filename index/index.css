@@ -31,6 +31,16 @@ button{
     animation-delay: 2s;
 }
 
+.nav-link{
+  text-decoration: none;
+  color: rgb(215, 215, 75);
+  font-size: large;
+}
+
+.nav-link:hover,.nav-link:focus{
+  color: rgba(160, 160, 69, 0.85);
+}
+
 @keyframes wave {
   0% {
     transform: scale(1);

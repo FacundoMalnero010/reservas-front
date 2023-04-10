@@ -11,7 +11,7 @@ function redirigirA(pagina){
     window.location.href = pagina;
 }
 
-//Falta hacer smooth
+//Scroll smooth
 
 const main = document.querySelector("main");
 let canScroll = true;
@@ -37,4 +37,14 @@ main.addEventListener("wheel", (e) => {
   if (currentSection.previousElementSibling && direction === -1) {
     currentSection.previousElementSibling.scrollIntoView({behavior: "smooth",duration: 1000});
   }
+});
+
+//Href smooth
+
+document.querySelectorAll('a[href^="#"').forEach(selector => {
+  selector.addEventListener('click',function(e){  
+    e.preventDefault();
+  
+    document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+  });
 });
