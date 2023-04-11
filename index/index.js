@@ -39,12 +39,16 @@ main.addEventListener("wheel", (e) => {
   }
 });
 
-//Href smooth
-
 document.querySelectorAll('a[href^="#"').forEach(selector => {
+  //Href smooth
   selector.addEventListener('click',function(e){  
     e.preventDefault();
   
     document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
   });
+  //Anulo drags
+  selector.addEventListener('dragstart',(evento)=>{
+    evento.preventDefault();
+  });
 });
+

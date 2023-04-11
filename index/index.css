@@ -1,3 +1,7 @@
+*{
+  user-select: none;
+}
+
 body{
   height: 100%;
   margin: 0;
@@ -37,6 +41,10 @@ button{
 
 .nav-link:hover,.nav-link:focus{
   color: rgba(160, 160, 69, 0.85);
+}
+
+.card-text{
+  visibility: hidden;
 }
 
 @keyframes wave {
