@@ -16,6 +16,17 @@ function redirigirA(pagina){
 const main = document.querySelector("main");
 let canScroll = true;
 
+window.addEventListener('scroll',function(){
+  const sobreNos = document.getElementById('sobreNosotros');
+  const cards = document.querySelectorAll('.card');
+  // verifico la posicion actual de la pantalla
+  const position = window.scrollY;
+  // si me encuentro en la seccion 2, le agrego animación
+  if(position >= sobreNos.offsetTop){
+    cards.forEach()
+  }
+});
+
 main.addEventListener("wheel", (e) => {
   // previene el desplazamiento predeterminado del mouse
   e.preventDefault();
