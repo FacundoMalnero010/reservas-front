@@ -16,17 +16,22 @@ function redirigirA(pagina){
 const main = document.querySelector("main");
 let canScroll = true;
 
-let animacionCards = false;
+let animacionCards = false, animacionMenu = false;
 
 window.addEventListener('scroll',function(){
   const sobreNos = document.getElementById('sobreNosotros');
+  const menu = document.getElementById('menuImage');
   const cards = document.querySelectorAll('.card');
   // verifico la posicion actual de la pantalla
   const position = window.scrollY;
   // si me encuentro en la seccion 2, le agrego animación
-  if(position <= sobreNos.offsetTop && !animacionCards){
+  if(position <= sobreNos.offsetTop-1 && !animacionCards){
     cards.forEach(card => {card.classList.add('deslizar')});
     animacionCards = true;
+  }
+  if(position >= sobreNos.offsetTop+1 && !animacionMenu){
+    menu.classList.add('agrandar');
+    animacionMenu = true;
   }
 });
 
@@ -66,3 +71,4 @@ document.querySelectorAll('a[href^="#"').forEach(selector => {
   });
 });
 
+document.getElementById('menuImage').addEventListener('dragstart',(evento)=>{evento.preventDefault()});
