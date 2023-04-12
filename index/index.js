@@ -24,7 +24,7 @@ window.addEventListener('scroll',function(){
   // verifico la posicion actual de la pantalla
   const position = window.scrollY;
   // si me encuentro en la seccion 2, le agrego animación
-  if(position >= sobreNos.offsetTop && !animacionCards){
+  if(position <= sobreNos.offsetTop && !animacionCards){
     cards.forEach(card => {card.classList.add('deslizar')});
     animacionCards = true;
   }
