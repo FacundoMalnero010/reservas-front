@@ -72,3 +72,71 @@ document.querySelectorAll('a[href^="#"').forEach(selector => {
 });
 
 document.getElementById('menuImage').addEventListener('dragstart',(evento)=>{evento.preventDefault()});
+
+const form = document.getElementById('form');
+
+form.addEventListener('submit', function(event){
+  event.preventDefault();
+
+  const nombre = document.getElementById('nombre');
+  const apellido = document.getElementById('apellido');
+  const correo = document.getElementById('correo');
+  const consulta = document.getElementById('consulta');
+  
+  if(!validarNombreOApellido(nombre.value)){
+    nombre.classList.add('is-invalid');
+    return false;
+  }
+  else{
+    verifico(nombre);
+  }
+
+  if(!validarNombreOApellido(apellido.value)){
+    apellido.classList.add('is-invalid');
+    return false;
+  }
+  else{
+    verifico(apellido);
+  }
+
+  if(!validarCorreo(correo.value)){
+    correo.classList.add('is-invalid');
+    return false;
+  }
+  else{
+    verifico(correo);
+  }
+
+  if(!validarConsulta(consulta.value)){
+    consulta.classList.add('is-invalid');
+    return false;
+  }
+  else{
+    verifico(consulta);
+  }
+
+  form.submit()
+
+});
+
+function validarNombreOApellido(nombre){
+  const regex = /^[\wáéíóúÁÉÍÓÚñÑ]{3,}$/;
+  return regex.test(nombre);
+}
+
+function validarCorreo(correo){
+  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  return regex.test(correo);
+}
+
+function validarConsulta(consulta){
+  const regex = /^[a-zA-Z0-9ñÑ]{3,255}$/;
+  return regex.test(consulta);
+}
+
+function verifico(input){
+  if(input.classList.contains('is-invalid')){
+    input.classList.remove('is-invalid');
+  }
+  input.classList.add('is-valid');
+}
