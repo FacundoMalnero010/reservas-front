@@ -24,12 +24,12 @@ section{
   filter: brightness(.7);
 }
 
-h1, button{
+h1, #boton{
   opacity: 0;
   animation: aparecer 2s ease-in-out forwards;
 }
 
-button{
+#boton{
     animation-delay: 2s;
 }
 
@@ -80,6 +80,40 @@ button{
 
 .agrandar{
   animation: agrandar 1s ease-in-out forwards;
+}
+
+fieldset{
+  width: 100%;
+}
+
+#containerForm{
+  width: 35vw;
+  background-color: #252525;
+  opacity: 0.80;
+}
+
+form{
+  width: 28vw;
+}
+
+#nombreField{
+  width: 100%;
+}
+
+#apellido{
+  margin-left: 10%;
+}
+
+#nombre,#apellido{
+  width: 45%;
+}
+
+#tituloForm{
+  color: rgb(215, 215, 75);
+}
+
+#nombreField, #correoField, #consultaField, #botonConsulta{
+  margin-top: 5%
 }
 
 @keyframes wave {

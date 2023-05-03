@@ -103,16 +103,27 @@
     </section>
 
     <section class="seccion d-flex flex-column justify-content-center align-items-center" id="contacto">
-      <p>contacto</p>
+      <div class="container d-flex justify-content-center align-items-center flex-column rounded-4 p-4" id="containerForm">
+        <h2 id="tituloForm"><strong>Linq</strong></h2>
+        <form action="consultas.php" method="post" class="d-flex justify-content-center align-items-center flex-column">
+          <fieldset id="nombreField" class="d-flex justify-content-center align-items-center">
+            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" autocomplete="off" required>
+            <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" autocomplete="off" required>
+          </fieldset>
+          <fieldset id="correoField">  
+            <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo Electrónico" autocomplete="off" required>
+          </fieldset>
+          <fieldset id="consultaField">
+            <textarea class="form-control" name="consulta" id="consulta" max="255" placeholder="Consulta" required></textarea>
+          </fieldset>
+          <fieldset id="botonConsulta" class="text-center">
+            <button type="submit" class="btn btn-warning">Consultar</button>
+          </fieldset>
+        </form>
+      </div>
     </section>
 
   </main>
-
-  <footer>
-
-
-
-  </footer>
 
   <script async src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
