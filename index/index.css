@@ -43,28 +43,28 @@ button{
   color: rgba(160, 160, 69, 0.85);
 }
 
-.card{
+#sobreNosotros .card{
   opacity: 0;
 }
 
-.card:hover{
+#sobreNosotros .card:hover{
   transform: scale(1.3);
 }
 
-.card:hover img{
+#sobreNosotros .card:hover img{
   filter: brightness(0.25);
 }
 
-.card:hover h5{
+#sobreNosotros .card:hover h5{
   visibility: visible;
   color: aliceblue;
 }
 
-.card-img-top{
+#sobreNosotros .card-img-top{
   filter: brightness(0.6);
 }
 
-.card-text{
+#sobreNosotros .card-text{
   visibility: hidden;
   font-size: xx-small;
 }

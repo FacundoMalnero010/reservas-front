@@ -21,7 +21,7 @@ let animacionCards = false, animacionMenu = false;
 window.addEventListener('scroll',function(){
   const sobreNos = document.getElementById('sobreNosotros');
   const menu = document.getElementById('menuImage');
-  const cards = document.querySelectorAll('.card');
+  const cards = document.querySelectorAll('#sobreNosotros .card');
   // verifico la posicion actual de la pantalla
   const position = window.scrollY;
   // si me encuentro en la seccion 2, le agrego animación
