@@ -130,7 +130,7 @@ function validarCorreo(correo){
 }
 
 function validarConsulta(consulta){
-  const regex = /^[a-zA-Z0-9ñÑ]{3,255}$/;
+  const regex = /^[a-zA-Z0-9ñÑ\s]{3,255}$/;
   return regex.test(consulta);
 }
 
@@ -139,4 +139,33 @@ function verifico(input){
     input.classList.remove('is-invalid');
   }
   input.classList.add('is-valid');
+}
+
+document.querySelector('#form').addEventListener('submit', function(event) {
+	event.preventDefault();
+  
+	// Obtiene los datos del formulario
+	const formData = new FormData(event.target);
+  
+	// Envía una solicitud AJAX con los datos
+	const xhr = new XMLHttpRequest();
+	xhr.open('POST', 'consultas.php');
+	xhr.onload = function() {
+	  if (xhr.status != 200) {
+		console.error('Error al enviar la solicitud');
+	  }
+	};
+	xhr.send(formData);
+	envioCompleto();
+});
+
+function envioCompleto(){
+	boton.classList.add('enviado');
+	boton.innerHTML = '';
+	document.getElementById('submit').disabled = true;
+	setTimeout(redirigirAInicio,2000);
+}
+
+function redirigirAInicio(){
+  window.scrollTo({top:0,behavior:'smooth'});
 }

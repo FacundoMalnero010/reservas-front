@@ -116,6 +116,35 @@ form{
   margin-top: 5%
 }
 
+#submit.enviado{
+  background-color: rgb(255, 255, 165);
+  color: black;
+  margin-top: 5%;
+  font-weight: bold;
+  border-radius: 100%;
+  animation: aVerde 1s ease-in-out forwards;
+}
+
+#submit.enviado::before{
+  content: '\2714';
+  animation: tilde 1s ease-in-out forwards;
+}
+
+@keyframes tilde{
+  100%{
+      color: rgb(243, 243, 243);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+  }
+}
+
+@keyframes aVerde{
+  100%{
+      background-color: #4dd039;
+  }
+}
+
 @keyframes wave {
   0% {
     transform: scale(1);
