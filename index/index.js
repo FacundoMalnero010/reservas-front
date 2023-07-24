@@ -42,7 +42,7 @@ main.addEventListener("wheel", (e) => {
   if (!canScroll) return;
   // obtiene la dirección del desplazamiento del mouse
   const direction = e.deltaY > 0 ? 1 : -1;
-  // establece un tiempo de espera antes de poder hacer scroll de nuevo
+  // establece un tiempo de espera antes de poder hacer scroll de nuevo3
   canScroll = false;
   setTimeout(() => (canScroll = true), 1000);
   // obtiene la siguiente sección
