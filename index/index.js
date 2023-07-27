@@ -1,6 +1,6 @@
 const boton = document.getElementById('boton');
 boton.addEventListener('click', function(){
-    setTimeout(redirigirA,500,'../reserva/reserva.php');
+    setTimeout(redirigirA,500,'../reserva/reserva.html');
 });
 
 function agregarAnimacion(){
@@ -18,6 +18,7 @@ let canScroll = true;
 
 let animacionCards = false, animacionMenu = false;
 
+/* Función para transición suave entre secciones al scrollear */
 window.addEventListener('scroll',function(){
   const sobreNos = document.getElementById('sobreNosotros');
   const menu = document.getElementById('menuImage');
@@ -71,10 +72,12 @@ document.querySelectorAll('a[href^="#"').forEach(selector => {
   });
 });
 
+/* Previene que la imagen del menú se pueda arrastrar */
 document.getElementById('menuImage').addEventListener('dragstart',(evento)=>{evento.preventDefault()});
 
 const form = document.getElementById('form');
 
+/* Maneja el submit del form de contacto */
 form.addEventListener('submit', function(event){
   event.preventDefault();
 
@@ -119,6 +122,7 @@ form.addEventListener('submit', function(event){
 
 });
 
+/* Funciones auxiliares para validación del form de contacto */
 function validarNombreOApellido(nombre){
   const regex = /^[\wáéíóúÁÉÍÓÚñÑ]{3,}$/;
   return regex.test(nombre);

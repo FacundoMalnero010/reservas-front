@@ -20,25 +20,9 @@ html,body,#contenedor{
     animation-delay: 1.25s;
 }
 
-#fecha{
-    width: 90%;
-}
-
-#comensales{
-    width: 25%;
-}
-
-input{
-    margin-bottom: 5%;
-}
-
-#horario{
-    margin-bottom: 8%;
-}
-
 label{
-    margin-top: 2.5%;
     margin-bottom: 2%;
+    margin-top: 6%;
     color: aliceblue;
     font-family: 'Open Sans';
     font-size: larger;
@@ -86,10 +70,6 @@ h1,label,input{
 #submit.enviado::before{
     content: '\2714';
     animation: tilde 1s ease-in-out forwards;
-}
-
-#tiempo{
-    width: 90%;
 }
 
 .ocupado{
