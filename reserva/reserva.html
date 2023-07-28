@@ -25,7 +25,7 @@
 				<div class="d-flex justify-content-center align-items-center col-11">
 					<div class="d-flex justify-content-center align-items-center flex-column col-5">
 						<label for="fecha">Dia</label>
-						<input type="date" name="fecha" id="fecha" min="" class="form-control" onchange="validar();verificarDisponibilidad()">
+						<input type="date" name="fecha" id="fecha" min="" class="form-control" onchange="validar();verificarDisponibilidad()" onkeydown="validar()">
 					</div>
 					<div class="d-flex justify-content-center align-items-center flex-column offset-2 col-5">
 						<label for="hora">Horario</label>
@@ -41,12 +41,12 @@
 					</div>
 					<div class="d-flex justify-content-center align-items-center flex-column offset-2 col-5">
 						<label for="nombre" id="nombreLabel">Nombre</label>
-						<input type="text" name="nombre" id="nombre" class="form-control" placeholder="John" onchange="validar()">
+						<input type="text" name="nombre" id="nombre" class="form-control" placeholder="John" onchange="validar()" onkeydown="validar()">
 					</div>
 				</div>
 				<div class="d-flex justify-content-center align-items-center flex-column col-11">
 					<label for="email" id="emailLabel">Email</label>
-					<input type="email" name="email" id="email" class="form-control" placeholder="tuemail@gmail.com" onchange="validar()">
+					<input type="email" name="email" id="email" class="form-control" placeholder="tuemail@gmail.com" onchange="validar()" onkeydown="validar()">
 				</div>
 				<button type="submit" id="submit" class="btn mt-4" disabled>Reservar</button>
 			</form>
@@ -65,9 +65,10 @@
 	</script>
 	<script type="module">
 		import { verificarDisponibilidad, validarForm, 
-			     deshabilitarSubmit, habilitarSubmit } 
+			     deshabilitarSubmit, habilitarSubmit, dispararError } 
 		from "./validaciones.js";
 		import { generarEntorno, envioCompleto } from './generacionDatos.js';
+		import { generarReserva } from './consultasBBDD.js';
 
 		/**
 		* Realiza la validación del form y habilita, o no, el submit 
@@ -80,17 +81,17 @@
 			generarEntorno();			
 		});
 
-		document.getElementById('form').addEventListener('submit', function(event){
-			envioCompleto();
-		});
-
 		//Establecemos las funciones de manera global para poder usarlas
 		window.validar = validar;
 		window.verificarDisponibilidad = verificarDisponibilidad;
 
-		//Se establece la animación de envío completo
-		document.getElementById('form').addEventListener('submit', function(event){
-			envioCompleto();
+		let form = document.getElementById('form');
+		//Se realiza el envio del formulario
+		form.addEventListener('submit', function(event){
+			event.preventDefault();
+			if(validarForm()){
+				generarReserva(event.target);
+			}
 		});
 
 	</script>

@@ -1,5 +1,4 @@
-import { deshabilitarSubmit } from "./validaciones.js";
-import { urlReservas } from './consultasBBDD.js';
+import { deshabilitarSubmit, dispararExito } from "./validaciones.js";
 
 /**
  * Genera los horarios, establece la primera fecha
@@ -14,12 +13,6 @@ export function generarEntorno(){
 	establecerMinimoDiaReserva();
 	generarHorarios();
 	deshabilitarSubmit();
- 	settearAction();
-}
-
-function settearAction(){
-	let form    = document.getElementById('form');
-	form.action.innerHTML = urlReservas;
 }
 
 /**
@@ -109,15 +102,12 @@ export function generarHorarios(){
 }
 
 /**
- * Genera la animación del botón de enviado
+ * Redirige luego de unos segundos al index
  */
 
 export function envioCompleto(){
-	let boton = document.getElementById('submit');
-	boton.classList.add('enviado');
-	boton.innerHTML = '';
-	document.getElementById('submit').disabled = true;
-	setTimeout(redirigirAInicio,2000);
+	dispararExito();
+	setTimeout(redirigirAInicio,3000);
 }
 
 /**
