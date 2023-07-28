@@ -9,12 +9,12 @@ html,body,#contenedor{
     filter: brightness(0.6);
 }
 
-#form{
+#contenedorForm{
     background-color: #252525;
     animation: aparecer 1s ease-in-out forwards;
 }
 
-#form *{
+#contenedorForm *{
     opacity: 0;
     animation: mostrar 1s ease-in-out forwards;
     animation-delay: 1.25s;
