@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
 	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 	<link rel="shortcut icon" href="../index/images/favicon.png" type="image/x-icon">
-	<link rel="stylesheet" href="reserva.css?v=<?php echo time(); ?>">
+	<link rel="stylesheet" href="reserva.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
 				<div class="d-flex justify-content-center align-items-center col-11">
 					<div class="d-flex justify-content-center align-items-center flex-column col-5">
 						<label for="fecha">Dia</label>
-						<input type="date" name="fecha" id="fecha" min="" class="form-control" onchange="validar(); verificarDisponibilidad()">
+						<input type="date" name="fecha" id="fecha" min="" class="form-control" onchange="validar();verificarDisponibilidad()">
 					</div>
 					<div class="d-flex justify-content-center align-items-center flex-column offset-2 col-5">
 						<label for="hora">Horario</label>
@@ -41,12 +41,12 @@
 					</div>
 					<div class="d-flex justify-content-center align-items-center flex-column offset-2 col-5">
 						<label for="nombre" id="nombreLabel">Nombre</label>
-						<input type="text" name="nombre" id="nombre" class="form-control" placeholder="John" onkeyup="validar()">
+						<input type="text" name="nombre" id="nombre" class="form-control" placeholder="John" onchange="validar()">
 					</div>
 				</div>
 				<div class="d-flex justify-content-center align-items-center flex-column col-11">
 					<label for="email" id="emailLabel">Email</label>
-					<input type="email" name="email" id="email" class="form-control" placeholder="tuemail@gmail.com" onkeyup="validar()">
+					<input type="email" name="email" id="email" class="form-control" placeholder="tuemail@gmail.com" onchange="validar()">
 				</div>
 				<button type="submit" id="submit" class="btn mt-4" disabled>Reservar</button>
 			</form>
@@ -57,50 +57,39 @@
   <footer>
 
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 	integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-	integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
-  <script src="reserva.js?v=<?php echo time(); ?>"></script>
-  <script>
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+		integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+	</script>
+	<script type="module">
+		import { verificarDisponibilidad, validarForm, 
+			     deshabilitarSubmit, habilitarSubmit } 
+		from "./validaciones.js";
+		import { generarEntorno, envioCompleto } from './generacionDatos.js';
 
-	function verificarDisponibilidad(){
-		let fechasOcupadas = obtenerFechasOcupadas();
-		let horariosOcupados = [];
-		let fechaActual = document.getElementById('fecha').value;
+		/**
+		* Realiza la validación del form y habilita, o no, el submit 
+		*/
 
-		//Anulo horarios bloqueados al cambiar dia
-		let select = document.getElementById('horario');
-		select.value = '';
-		let options = select.options;
+		let validar = () => validarForm() ? habilitarSubmit() : deshabilitarSubmit();
+		
+		//Al terminar de cargar el DOM se establecen datos primordiales
+		document.addEventListener('DOMContentLoaded', () => {
+			generarEntorno();			
+		});
 
-		for(let i=0;i<options.length;i++){
-			if(options[i].classList.contains('ocupado')){
-				options[i].classList.remove('ocupado');
-				options[i].disabled = false;
-			}
-		}
+		document.getElementById('form').addEventListener('submit', function(event){
+			envioCompleto();
+		});
 
-		//Discrimino horarios reservados del dia seleccionado
-		for(let fecha in fechasOcupadas){
-			if(fechasOcupadas[fecha]['fecha'] === fechaActual){
-				horariosOcupados.push(fechasOcupadas[fecha]['horario']);
-			}
-		}
-
-		//Los deshabilito
-		for(let horario in horariosOcupados){
-			let option = document.querySelector('select[name="horario"] option[value="'+horariosOcupados[horario]+'"]');
-			option.disabled = true;
-			option.classList.add('ocupado');
-		}
-	}
+		//Establecemos las funciones de manera global para poder usarlas
+		window.validar = validar;
+		window.verificarDisponibilidad = verificarDisponibilidad;
 
 	</script>
-
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
