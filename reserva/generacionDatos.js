@@ -1,4 +1,5 @@
-import { deshabilitarSubmit, dispararExito } from "./validaciones.js";
+import { deshabilitarSubmit } from "./validaciones.js";
+import { dispararExito } from "../funcionesGenericas.js";
 
 /**
  * Genera los horarios, establece la primera fecha

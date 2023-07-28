@@ -1,5 +1,5 @@
 import { envioCompleto } from "./generacionDatos.js";
-import { dispararError } from "./validaciones.js";
+import { dispararError } from "../funcionesGenericas.js";
 
 export const urlReservas = 'http://localhost:8000/api/reservas'
 
