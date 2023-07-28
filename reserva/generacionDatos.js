@@ -14,12 +14,12 @@ export function generarEntorno(){
 	establecerMinimoDiaReserva();
 	generarHorarios();
 	deshabilitarSubmit();
-	settearAction()
+ 	settearAction();
 }
 
 function settearAction(){
 	let form    = document.getElementById('form');
-	form.action = urlReservas;
+	form.action.innerHTML = urlReservas;
 }
 
 /**

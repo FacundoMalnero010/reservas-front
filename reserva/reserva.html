@@ -21,7 +21,7 @@
 	<div id="contenedor" class="d-flex justify-content-center align-items-center">
 		<div id="form" class="d-flex justify-content-center align-items-center flex-column">
 			<h1>Linq</h1>
-			<form method="POST" action="" class="d-flex justify-content-center align-items-center flex-column col-9" id="form" name="form">
+			<form method="post" action="" class="d-flex justify-content-center align-items-center flex-column col-9" id="form" name="form">
 				<div class="d-flex justify-content-center align-items-center col-11">
 					<div class="d-flex justify-content-center align-items-center flex-column col-5">
 						<label for="fecha">Dia</label>
@@ -87,6 +87,11 @@
 		//Establecemos las funciones de manera global para poder usarlas
 		window.validar = validar;
 		window.verificarDisponibilidad = verificarDisponibilidad;
+
+		//Se establece la animación de envío completo
+		document.getElementById('form').addEventListener('submit', function(event){
+			envioCompleto();
+		});
 
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
