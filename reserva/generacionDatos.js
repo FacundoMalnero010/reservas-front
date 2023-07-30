@@ -116,5 +116,5 @@ export function envioCompleto(){
  */
 
 function redirigirAInicio(){
-	window.location.replace('../index/index.html');
+	window.location.href = '../index/index.html';
 }

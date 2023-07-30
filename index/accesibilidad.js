@@ -79,6 +79,12 @@ function scrolleoEntreSecciones(sobreNos,menu,cards){
     }
 }
 
+export function agregarAnimacion(boton){
+/*    boton.classList.add('waves');*/   //No funciona por el momento
+      /* setTimeout(() => {window.location.href = '../reserva/reserva.html'}, 1000); */
+      window.location.href = '../reserva/reserva.html'
+}
+
 /**
  * Realiza una transición smooth hacia la primera sección
  */

@@ -116,6 +116,10 @@ form{
   margin-top: 5%
 }
 
+.waves{
+  animation: wave 1s ease-in-out forwards;
+}
+
 #submit.enviado{
   background-color: rgb(255, 255, 165);
   color: black;
