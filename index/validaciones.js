@@ -29,18 +29,22 @@ export function validarNombreOApellido(valor){
       let nombre   = document.getElementById('nombre');
       if(!regex.test(nombre.value)){
         invalido(nombre);
+        return false;
       }
       else{
         valido(nombre);
+        return true;
       }
     }
     else{
       let apellido = document.getElementById('apellido');
       if(!regex.test(apellido.value)){
         invalido(apellido);
+        return false;
       }
       else{
         valido(apellido);
+        return true;
       }
     }
 }
@@ -52,14 +56,15 @@ export function validarNombreOApellido(valor){
  * @returns {boolean}
  */
 
-export function validarCorreo(){
-  const correo = document.getElementById('correo');
+export function validarCorreo(correo){
   const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   if(!regex.test(correo.value)){
     invalido(correo);
+    return false;
   }
   else{
     valido(correo);
+    return true;
   }
 }
 
@@ -70,14 +75,15 @@ export function validarCorreo(){
  * @returns {boolean}
  */
 
-export function validarConsulta(){
-  const regex    = /^[a-zA-Z0-9ñÑ\s]{3,255}$/;
-  const consulta = document.getElementById('consulta');
+export function validarConsulta(consulta){
+  const regex = /^[a-zA-Z0-9ñÑ¿¡\s!?]{3,255}$/;
   if(!regex.test(consulta.value)){
     invalido(consulta);
+    return false;
   }
   else{
     valido(consulta);
+    return true;
   }
 }
 

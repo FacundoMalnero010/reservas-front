@@ -116,10 +116,10 @@
             <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" autocomplete="off" onkeyup="validarNombreOApellido('apellido')">
           </fieldset>
           <fieldset id="correoField">  
-            <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo Electrónico" autocomplete="off" onkeyup="validarCorreo()">
+            <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo Electrónico" autocomplete="off" onkeyup="validarCorreo(this)">
           </fieldset>
           <fieldset id="consultaField">
-            <textarea class="form-control" name="consulta" id="consulta" max="255" placeholder="Consulta" onkeyup="validarConsulta()"></textarea>
+            <textarea class="form-control" name="consulta" id="consulta" max="255" placeholder="Consulta" onkeyup="validarConsulta(this)"></textarea>
           </fieldset>
           <fieldset id="botonConsulta" class="text-center">
             <button type="submit" id="submit" class="btn btn-warning">Consultar</button>
@@ -158,8 +158,8 @@
       const consulta = document.getElementById('consulta');
 
       let datos = ['nombre','apellido',correo,consulta];
-
-      validarDatos(datos) ? enviarConsulta(event.target) : null;
+      let datosValidos = validarDatos(datos);
+      datosValidos ? () => {console.log(datosValidos);enviarConsulta(event.target)} : null;
     });
 
     //Setteo las funciones globales para poder usarlas
