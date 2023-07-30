@@ -66,14 +66,7 @@ h1, #boton{
 
 #sobreNosotros .card-text{
   visibility: hidden;
-  font-size: x-small;
-}
-
-@media (min-width:1280px){
-  #sobreNosotros .card-text{
-    visibility: hidden;
-    font-size: small;
-  }
+  font-size: 0.6em;
 }
 
 .deslizar{

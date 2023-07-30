@@ -141,13 +141,12 @@
   <script type="module" src="validaciones.js"></script>
   <script type="module">
 
-    import { scrollPausadoSmooth, scrolleoEntreSecciones, menuSmooth } from './accesibilidad.js';
+    import { scrollPausadoSmooth, menuSmooth } from './accesibilidad.js';
     import { validarDatos, validarNombreOApellido, validarCorreo, validarConsulta } from './validaciones.js';
     import { enviarConsulta } from './consultasBBDD.js';
 
     menuSmooth();
     document.querySelector('main').addEventListener('wheel', (event) => scrollPausadoSmooth(event));
-    window.addEventListener('scroll', scrolleoEntreSecciones());
     /* Previene que la imagen del menú se pueda arrastrar */
     document.getElementById('menuImage').addEventListener('dragstart',(evento)=>{evento.preventDefault()});
     
