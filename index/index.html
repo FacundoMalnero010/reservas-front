@@ -110,7 +110,7 @@
     <section class="seccion d-flex flex-column justify-content-center align-items-center" id="contacto">
       <div class="container d-flex justify-content-center align-items-center flex-column rounded-4 p-4" id="containerForm">
         <h2 id="tituloForm"><strong>Linq</strong></h2>
-        <form action="" method="post" class="d-flex justify-content-center align-items-center flex-column" id="form" name="form">
+        <form method="post" class="d-flex justify-content-center align-items-center flex-column" id="form" name="form">
           <fieldset id="nombreField" class="d-flex justify-content-center align-items-center">
             <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" autocomplete="off" onkeyup="validarNombreOApellido('nombre')">
             <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" autocomplete="off" onkeyup="validarNombreOApellido('apellido')">
@@ -133,6 +133,7 @@
   <script async src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
@@ -153,13 +154,12 @@
     let form = document.getElementById('form');
     form.addEventListener('submit', (event) => {
       event.preventDefault();
-
-      const correo   = document.getElementById('correo');
-      const consulta = document.getElementById('consulta');
-
-      let datos = ['nombre','apellido',correo,consulta];
+      let correo       = document.getElementById('correo');
+      let consulta     = document.getElementById('consulta');
+      let datos        = ['nombre','apellido',correo,consulta];
       let datosValidos = validarDatos(datos);
-      datosValidos ? () => {console.log(datosValidos);enviarConsulta(event.target)} : null;
+
+      datosValidos ? enviarConsulta(event.target) : null;
     });
 
     //Setteo las funciones globales para poder usarlas

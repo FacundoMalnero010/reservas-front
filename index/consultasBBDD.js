@@ -11,9 +11,8 @@ const urlBase = 'http://localhost:8000/api/consultas';
  * @uses dispararError()
  */
 
-export function enviarConsulta(form){
+export async function enviarConsulta(form){
 	const formData = new FormData(form);
-
 	fetch(urlBase, {
 		method: 'POST',
 		body: formData
@@ -21,15 +20,14 @@ export function enviarConsulta(form){
 	.then(response => {
 		if(!response.ok){
 			throw new Error('No se pudo acceder a la API');
-		}
-		
+		}	
 		return response.json();
 	})
 	.then(data => {
-		data.code === 200 ? envioCompleto() : dispararError();	
+		data.code === 200 ? envioCompleto() : dispararError();
 	})
 	.catch(error => {
-		throw new Error('No se pudo realizar la consulta');
+		throw new Error('Ocurrió algún problema en la consulta');
 	})
 }
 

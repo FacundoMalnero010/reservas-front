@@ -3,6 +3,12 @@ import { dispararError } from "../funcionesGenericas.js";
 
 export const urlReservas = 'http://localhost:8000/api/reservas'
 
+/**
+ * 
+ * @param {Date} fecha 
+ * @returns {Time[]}
+ */
+
 export async function obtenerFechasOcupadas(fecha){
     return fetch(urlReservas+'/horariosReservados/'+fecha)
         .then(response => {
@@ -19,6 +25,14 @@ export async function obtenerFechasOcupadas(fecha){
             throw new Error('Ocurrió algún problema en la consulta');
         });
 }
+
+/**
+ * Hace una petición para almacenar una reserva
+ * 
+ * @param {HTMLFormElement} form 
+ * @uses envioCompleto()
+ * @uses dispararError()
+ */
 
 export async function generarReserva(form){
     const formData = new FormData(form);
