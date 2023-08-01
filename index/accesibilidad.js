@@ -79,10 +79,14 @@ function scrolleoEntreSecciones(sobreNos,menu,cards){
     }
 }
 
-export function agregarAnimacion(boton){
-/*    boton.classList.add('waves');*/   //No funciona por el momento
-      /* setTimeout(() => {window.location.href = '../reserva/reserva.html'}, 1000); */
-      window.location.href = '../reserva/reserva.html'
+/**
+ * Agrega una animación de expansión al botón de reserva
+ */
+
+export function agregarAnimacion(){
+      const boton = document.getElementById('boton');
+      boton.classList.add('waves');
+      setTimeout(() => {window.location.href = '../reserva/reserva.html'}, 1000);
 }
 
 /**

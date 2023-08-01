@@ -24,12 +24,12 @@ section{
   filter: brightness(.7);
 }
 
-h1, #boton{
+h1, .botonReserva{
   opacity: 0;
   animation: aparecer 2s ease-in-out forwards;
 }
 
-#boton{
+.botonReserva{
     animation-delay: 2s;
 }
 
@@ -117,21 +117,7 @@ form{
 }
 
 .waves{
-  animation: wave 1s ease-in-out forwards;
-}
-
-#submit.enviado{
-  background-color: rgb(255, 255, 165);
-  color: black;
-  margin-top: 5%;
-  font-weight: bold;
-  border-radius: 100%;
-  animation: aVerde 1s ease-in-out forwards;
-}
-
-#submit.enviado::before{
-  content: '\2714';
-  animation: tilde 1s ease-in-out forwards;
+  animation: waves 1s ease-in-out forwards;
 }
 
 @keyframes tilde{
@@ -143,13 +129,7 @@ form{
   }
 }
 
-@keyframes aVerde{
-  100%{
-      background-color: #4dd039;
-  }
-}
-
-@keyframes wave {
+@keyframes waves {
   0% {
     transform: scale(1);
     opacity: 1;
