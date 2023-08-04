@@ -12,12 +12,14 @@ export function dispararError(){
 
 /**
  * Utiliza Swal para mostrar un cartel de exito
+ * 
+ * @param {string} mensaje
  */
 
-export function dispararExito(){
+export function dispararExito(mensaje){
     Swal.fire({
 		icon: 'success',
 		title: 'Éxito',
-		text: 'Se ha almacenado su reserva'
+		text: mensaje
 	});
 }
