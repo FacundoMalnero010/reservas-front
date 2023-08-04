@@ -11,9 +11,11 @@ import { dispararError } from '../funcionesGenericas.js';
  * @uses resetearHorarios()
  */
 
-const boton = document.getElementById('submit');
+const boton   = document.getElementById('submit');
+const horario = document.getElementById('horario');
 
 export async function verificarDisponibilidad(){
+    horario.disabled = true;
     let fecha = document.getElementById('fecha').value;
 	let horariosOcupados = await obtenerFechasOcupadas(fecha);
     if(!esInstanciaError(fecha)){
@@ -64,9 +66,8 @@ function esInstanciaError(data){
 
 function resetearHorarios(){
     //Anulo horario al cambiar de dia
-    let select = document.getElementById('horario');
-    select.value = '';
-    let options = select.options;
+    horario.value = '';
+    let options = horario.options;
     //Se habilitan todos los horarios
     for(let i=0;i<options.length;i++){
         if(options[i].classList.contains('ocupado')){
@@ -90,6 +91,7 @@ function deshabilitarHorariosReservados(horariosOcupados){
         option.disabled = true;
         option.classList.add('ocupado');
     });
+    horario.disabled = false;
 }
 
 /**
