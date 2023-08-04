@@ -1,7 +1,7 @@
 import { dispararError, dispararExito } from "../funcionesGenericas.js";
 import { subirAHome } from "./accesibilidad.js";
 
-const urlBase = 'http://localhost:8000/api/consultas';
+const urlBase = 'http://localhost:8080/api/consultas';
 
 /**
  * Hace una petición para almacenar una consulta
