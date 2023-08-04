@@ -161,7 +161,8 @@
 
       if(datosValidos){
         let boton = document.getElementById('submit');
-        boton.disabled = true;
+        boton.disabled  = true;
+        boton.innerHTML = 'Creando consulta';
         enviarConsulta(event.target);
       }
     });

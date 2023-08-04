@@ -92,7 +92,8 @@
 		form.addEventListener('submit', function(event){
 			event.preventDefault();
 			if(validarForm()){
-				botonSubmit.disabled = true;
+				botonSubmit.disabled  = true;
+				botonSubmit.innerText = 'Reservando';
 				generarReserva(event.target);
 			}
 		});
