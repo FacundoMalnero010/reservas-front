@@ -78,9 +78,9 @@ h1, .botonReserva{
   }
 }
 
-@media (min-width:1024px){
+@media (min-width:1360px){
   .card-text{
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
 }
 

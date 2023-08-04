@@ -39,6 +39,6 @@ export async function enviarConsulta(form){
  */
 
 function envioCompleto(){
-	dispararExito();
+	dispararExito('Su consulta se ha almacenado');
 	setTimeout(subirAHome,3000);
 }

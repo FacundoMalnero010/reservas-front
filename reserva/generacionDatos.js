@@ -107,7 +107,7 @@ export function generarHorarios(){
  */
 
 export function envioCompleto(){
-	dispararExito();
+	dispararExito('Su reserva se ha almacenado');
 	setTimeout(redirigirAInicio,3000);
 }
 
