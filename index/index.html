@@ -28,10 +28,10 @@
         <a class="nav-link active" aria-current="page" href="#reservar">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#sobreNosotros">Acerca de</a>
+        <a class="nav-link" href="#sobreNosotros" onclick="activarAnimacionCards()">Acerca de</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#menu">Menu</a>
+        <a class="nav-link" href="#menu" onclick="activarAnimacionMenu()">Menu</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#contacto">Contacto</a>
@@ -142,7 +142,8 @@
   <script type="module" src="validaciones.js"></script>
   <script type="module">
 
-    import { scrollPausadoSmooth, menuSmooth, agregarAnimacion } from './accesibilidad.js';
+    import { scrollPausadoSmooth, menuSmooth, agregarAnimacion,
+             activarAnimacionCards, activarAnimacionMenu } from './accesibilidad.js';
     import { validarDatos, validarNombreOApellido, validarCorreo, validarConsulta } from './validaciones.js';
     import { enviarConsulta } from './consultasBBDD.js';
 
@@ -167,6 +168,8 @@
     window.validarCorreo          = validarCorreo;
     window.validarConsulta        = validarConsulta;
     window.agregarAnimacion       = agregarAnimacion;
+    window.activarAnimacionCards  = activarAnimacionCards;
+    window.activarAnimacionMenu   = activarAnimacionMenu;
 
   </script>
 </body>

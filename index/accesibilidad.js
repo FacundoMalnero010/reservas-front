@@ -69,13 +69,34 @@ function scrolleoEntreSecciones(sobreNos,menu,cards){
     const position = window.scrollY;
     // si me encuentro en la seccion 2, le agrego animación
     if(position < sobreNos.offsetTop && !animacionCards){
-        cards.forEach(card => {card.classList.add('deslizar')});
-        animacionCards = true;
+        activarAnimacionCards(cards);
     }
     if(position < menu.offsetTop && position > sobreNos.offsetTop && !animacionMenu){
-        const menuImage = document.getElementById('menuImage');
-        menuImage.classList.add('agrandar');
-        animacionMenu = true;
+        activarAnimacionMenu();
+    }
+}
+
+/**
+ * Activa la animación de las cards en la sección acerca-de
+ */
+
+export function activarAnimacionCards(){
+    if(!animacionCards){
+      let cards = document.querySelectorAll('.card');
+      cards.forEach(card => {card.classList.add('deslizar')});
+      animacionCards = true;
+    }
+}
+
+/**
+ * Activa la animación del menú en la sección menú
+ */
+
+export function activarAnimacionMenu(){
+    if(!animacionMenu){
+      const menuImage = document.getElementById('menuImage');
+      menuImage.classList.add('agrandar');
+      animacionMenu = true;
     }
 }
 
