@@ -29,7 +29,7 @@
 					</div>
 					<div class="d-flex justify-content-center align-items-center flex-column offset-2 col-5">
 						<label for="hora">Horario</label>
-						<select type="time" id="horario" class="form-control" name="horario" onchange="validar()">
+						<select type="time" id="horario" class="form-control" name="horario" onchange="validar()" disabled>
 							<option value="" selected></option>
 						</select>
 					</div>
@@ -70,6 +70,8 @@
 		import { generarEntorno, envioCompleto } from './generacionDatos.js';
 		import { generarReserva } from './consultasBBDD.js';
 
+		const botonSubmit = document.getElementById('submit');
+
 		/**
 		* Realiza la validación del form y habilita, o no, el submit 
 		*/
@@ -90,6 +92,8 @@
 		form.addEventListener('submit', function(event){
 			event.preventDefault();
 			if(validarForm()){
+				botonSubmit.disabled  = true;
+				botonSubmit.innerText = 'Reservando';
 				generarReserva(event.target);
 			}
 		});

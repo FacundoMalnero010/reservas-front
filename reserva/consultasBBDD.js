@@ -1,7 +1,7 @@
 import { envioCompleto } from "./generacionDatos.js";
 import { dispararError } from "../funcionesGenericas.js";
 
-export const urlReservas = 'http://localhost:8000/api/reservas'
+export const urlReservas = 'http://localhost:8080/api/reservas'
 
 /**
  * 

@@ -160,7 +160,12 @@
       let datos        = ['nombre','apellido',correo,consulta];
       let datosValidos = validarDatos(datos);
 
-      datosValidos ? enviarConsulta(event.target) : null;
+      if(datosValidos){
+        let boton = document.getElementById('submit');
+        boton.disabled  = true;
+        boton.innerHTML = 'Creando consulta';
+        enviarConsulta(event.target);
+      }
     });
 
     //Setteo las funciones globales para poder usarlas
