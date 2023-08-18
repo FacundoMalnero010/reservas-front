@@ -1,4 +1,4 @@
-import { loguear } from "./consultasBBDD";
+import { loguear } from "./consultasBBDD.js";
 
 const form = document.getElementById('loginForm');
 
