@@ -1,6 +1,6 @@
-import { dispararError } from '../../cliente/funcionesGenericas.js';
+import { dispararError, hashURL } from '../../funcionesGenericas.js';
 
-const url = 'http://localhost:8080/api/administradores/login'
+const url = 'http://localhost:8080/api/administradores/login';
 
 /**
  * Envia por api los datos del form para validar si las credenciales
@@ -12,7 +12,8 @@ const url = 'http://localhost:8080/api/administradores/login'
 
 export async function loguear(form) {
     const formData = new FormData(form);
-    fetch(url, {
+
+    await fetch(url, {
         method:'POST',
         body: formData
     })
@@ -25,6 +26,7 @@ export async function loguear(form) {
         }
     })
     .then(data => {
-        data.code === 200 ? window.location.href = '../index/index.html' : dispararError(); 
-    });
+        data.code === 200 ? window.location.href = '../index/index.html' : 0; 
+    })
+    .catch((error) => {dispararError('Sus credenciales son incorrectas')});
 }

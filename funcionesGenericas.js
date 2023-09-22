@@ -2,11 +2,11 @@
  * Utiliza Swal para mostrar un cartel de error
  */
 
-export function dispararError(){
+export function dispararError(mensaje){
     Swal.fire({
         icon:  'error',
         title: 'Oops...',
-        text:  'Hubo un problema! Vuelva a intentarlo en un rato',
+        text:  mensaje
     });
 }
 
@@ -22,4 +22,15 @@ export function dispararExito(mensaje){
 		title: 'Éxito',
 		text: mensaje
 	});
+}
+
+/**
+ * Hashea una url
+ * 
+ * @param {URL} url
+ * @returns {string}
+ */
+
+export function hashURL(url){
+    return crypto.createHash('md5').update(str).digest('hex');
 }
